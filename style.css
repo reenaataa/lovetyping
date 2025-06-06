@@ -84,3 +84,19 @@ body {
     font-size: 18px;
     text-transform: uppercase;
 }
+
+@media screen and (max-width: 480px) {
+    #message-container {
+        width: 300px;
+        height: auto;
+        gap: 5px;
+    }
+    .letter {
+        width: 25px;
+        height: 25px;
+        font-size
+    }
+    .key-container {
+        gap: 8px;;
+    }
+}
