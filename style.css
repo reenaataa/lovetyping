@@ -94,9 +94,9 @@ body {
     .letter {
         width: 25px;
         height: 25px;
-        font-size
+        font-size: 14px;
     }
     .key-container {
-        gap: 8px;;
+        gap: 8px;
     }
 }
