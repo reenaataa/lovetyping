@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'Minecraft';
+    src: url(/Minecraft.ttf);
+}
+
+@keyframes wiggle {
+    0%, 100%, 80% { 
+        transform: rotate(0deg);
+    }
+   85% { 
+        transform: rotate(8deg); 
+    }
+   95% { 
+        transform: rotate(-8deg); 
+    }
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffe7f0;
+    font-family: 'Minecraft';
+    user-select: none;
+    overflow: hidden;
+}
+
+#message-container {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+
+.key-container {
+    display: flex;
+    justify-content: center;
+    gap: 13px;
+}
+.key {
+    background-color: #000;
+    padding: 4px 10px 8px 6px;
+    box-shadow: inset 3px 3px 3px #696969, inset -3px -3px 3px #373737, 0px 6px 8px #3704187d;
+    border-radius: 7px;
+}
+.key:hover {
+    animation: wiggle .5s 1;
+    cursor: pointer;
+    animation-delay: .1s;
+}
+.key:active .letter {
+    background: linear-gradient(199deg, #000000, #2f2f2fe6);
+    box-shadow: inset 1px 1px #121212, inset -1px -1px #121212;
+}
+.key:nth-child(odd) {
+  transform: rotate(-3deg);
+}
+.key:nth-child(even) {
+  transform: rotate(3deg);
+}
+.question {
+    transform: none!important;
+}
+.letter {
+    color: #fff;
+    background: linear-gradient(180deg, #323234, #1d1d1de6);
+    border-radius: 4px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0px 1px #868484, inset -1px -1px #2e2e2e;
+    font-size: 18px;
+    text-transform: uppercase;
+}
