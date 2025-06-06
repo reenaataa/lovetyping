@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <title>(*ᴗ͈ˬᴗ͈)ꕤ*.ﾟ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="message-container">
+
+        <div class="key-container">
+            <div class="key">
+                <div class="letter"><span>q</span></div>
+            </div>
+            <div class="key">
+                <div class="letter"><span>u</span></div>
+            </div>
+            <div class="key">
+                <div class="letter"><span>e</span></div>
+            </div>
+            <div class="key">
+                <div class="letter"><span>r</span></div>
+            </div>
+        </div>
+        <div class="key-container">
+            <div class="key">
+                <div class="letter"><span>f</span></div>
+            </div>
+            <div class="key">
+                <div class="letter"><span>i</span></div>
+            </div>
+            <div class="key">
+                <div class="letter"><span>c</span></div>
+            </div>
+            <div class="key">
+                <div class="letter"><span>a</span></div>
+            </div>
+            <div class="key">
+                <div class="letter"><span>r</span></div>
+            </div>
+        </div>
+        <div class="key-container">
+            <div class="key">
+                <div class="letter"><span>c</span></div>
+            </div>
+            <div class="key">
+                <div class="letter"><span>o</span></div>
+            </div>
+            <div class="key">
+                <div class="letter"><span>m</span></div>
+            </div>
+            <div class="key">
+                <div class="letter"><span>i</span></div>
+            </div>
+            <div class="key">
+                <div class="letter"><span>g</span></div>
+            </div>
+            <div class="key">
+                <div class="letter"><span>o</span></div>
+            </div>
+        </div>
+        <div class="key-container">
+            <div class="key question" data-key="?">
+                <div class="letter"><span>?</span></div>
+            </div>
+        </div>
+    
+        <script>
+        const question = document.querySelectorAll('.question span');
+
+        question.forEach(span => {
+            const original = span.textContent;
+
+            span.parentElement.addEventListener('mouseenter', () => {
+                span.textContent = '❤';
+                span.style.color = '#b80014'
+            });
+
+            span.parentElement.addEventListener('mouseleave', () => {
+                span.textContent = original;
+            });
+        });
+
+        const eleGosta = document.querySelectorAll('.question');
+        const audio = new Audio('vai-dar.mp3');
+
+        eleGosta.forEach(key => {
+            key.addEventListener('click', () => {
+            const letra = key.dataset.key;
+
+            if (letra === '?') {
+                audio.currentTime = 0;
+                audio.play();
+            }
+            });
+        });
+
+        </script>
+    </div>
+</body>
+</html>
