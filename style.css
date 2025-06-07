@@ -68,9 +68,7 @@ body {
 .key:nth-child(even) {
   transform: rotate(3deg);
 }
-.question {
-    transform: none!important;
-}
+
 .letter {
     color: #fff;
     background: linear-gradient(180deg, #323234, #1d1d1de6);
@@ -83,6 +81,37 @@ body {
     box-shadow: inset 0px 1px #868484, inset -1px -1px #2e2e2e;
     font-size: 18px;
     text-transform: uppercase;
+}
+
+.question {
+    transform: none!important;
+}
+
+.confess span {
+    font-size: 20px;
+}
+
+.heart-balloon {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    font-size: 24px;
+    color: #b80014;
+    animation: rise 2s ease-out forwards;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.9;
+}
+
+@keyframes rise {
+    0% {
+        transform: translateX(0) translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-50px) translateY(-600px) scale(1.5);
+        opacity: 0;
+    }
 }
 
 @media screen and (max-width: 600px) {

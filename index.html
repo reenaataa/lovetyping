@@ -62,42 +62,59 @@
             </div>
         </div>
         <div class="key-container">
-            <div class="key question" data-key="?">
-                <div class="letter"><span>?</span></div>
+            <div class="key question">
+                <div class="letter confess"><span>?</span></div>
             </div>
         </div>
-    
-        <script>
-        const question = document.querySelectorAll('.question span');
-
-        question.forEach(span => {
-            const original = span.textContent;
-
-            span.parentElement.addEventListener('mouseenter', () => {
-                span.textContent = '❤';
-                span.style.color = '#b80014'
-            });
-
-            span.parentElement.addEventListener('mouseleave', () => {
-                span.textContent = original;
-            });
-        });
-
-        const eleGosta = document.querySelectorAll('.question');
-        const audio = new Audio('vai-dar.mp3');
-
-        eleGosta.forEach(key => {
-            key.addEventListener('click', () => {
-            const letra = key.dataset.key;
-
-            if (letra === '?') {
-                audio.currentTime = 0;
-                audio.play();
-            }
-            });
-        });
-
-        </script>
     </div>
+
+    <script>
+        const confess=document.querySelector('.confess');
+        const span=confess.querySelector('.letter span');
+        const dancaGatinho=new Audio('ueepa.mp3');
+        let clicado=false;
+            
+        function soltarBalao() {
+            const heart=document.createElement('div');
+            heart.classList.add('heart-balloon');
+            heart.textContent='❤';
+
+            heart.style.left = Math.random() * 100 + 'vw';
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 3000);
+        }
+
+        confess.addEventListener('mouseenter',() => {
+           if (!clicado){
+                span.textContent='!';
+            }
+        });
+            
+        confess.addEventListener('mouseleave', () => {
+            if (!clicado){
+                span.textContent='?';
+            }
+        });
+
+        confess.addEventListener('click', () => {
+            if (!clicado){
+                span.textContent='❤';
+                span.style.color='#b80014';
+                dancaGatinho.play();
+
+                for (let i = 0; i < 40; i++) {
+                    setTimeout(soltarBalao, i * 200);
+                }
+            }
+            dancaGatinho.currentTime=0;
+            dancaGatinho.play();
+
+            clicado=true;
+        });
+    </script>
 </body>
 </html>
