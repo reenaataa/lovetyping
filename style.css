@@ -20,12 +20,24 @@
     }
 }
 
+@keyframes rise {
+    0% {
+        transform: translateX(0) translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-50px) translateY(-600px) scale(1.5);
+        opacity: 0;
+    }
+}
+
 body {
     width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     background-color: #ffe7f0;
     font-family: 'Minecraft';
     user-select: none;
@@ -103,15 +115,43 @@ body {
     opacity: 0.9;
 }
 
-@keyframes rise {
-    0% {
-        transform: translateX(0) translateY(0) scale(1);
-        opacity: 1;
-    }
-    100% {
-        transform: translateX(-50px) translateY(-600px) scale(1.5);
-        opacity: 0;
-    }
+footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.infoBtn {
+    background-color: #3704183b;
+    border: 0.5px solid #370418;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    color: #370418;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.infoMenu {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 25px;
+}
+
+.infoMenu.show {
+    display: block;
+}
+
+.infoMenu a {
+    font-size: 10px;
+    text-decoration: none;
+    color: #370418;
+    letter-spacing: 0.8px;
+}
+
+.infoMenu a:hover {
+    text-decoration: underline;
 }
 
 @media screen and (max-width: 600px) {

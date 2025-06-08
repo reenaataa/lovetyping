@@ -67,7 +67,12 @@
             </div>
         </div>
     </div>
-
+    <footer>
+        <button class="infoBtn">!</button>
+        <div class="infoMenu">
+            <a href="https://github.com/reenaataa/lovetyping" rel="noopener noreferrer" target="_blank">GitHub</a>
+        </div>
+    </footer>
     <script>
         const confess=document.querySelector('.confess');
         const span=confess.querySelector('.letter span');
@@ -115,6 +120,11 @@
 
             clicado=true;
         });
+
+        document.querySelector(".infoBtn").addEventListener("click", function () {
+            document.querySelector(".infoMenu").classList.toggle("show");
+        });
+
     </script>
 </body>
 </html>
