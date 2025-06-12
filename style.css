@@ -59,6 +59,9 @@ body {
     justify-content: center;
     gap: 13px;
 }
+.space {
+    gap: 55px;
+}
 .key {
     background-color: #000;
     padding: 4px 10px 8px 6px;
@@ -79,6 +82,14 @@ body {
 }
 .key:nth-child(even) {
   transform: rotate(3deg);
+}
+.shitf {
+    justify-content: flex-start;
+    width: 85px;
+}
+.shift .letter, .capslock .letter {
+    font-size: 10px;
+    width: 85px;
 }
 
 .letter {
